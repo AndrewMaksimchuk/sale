@@ -2,16 +2,13 @@ const bottonOnOff = document.getElementById('onOffApp');
 const appStatusOn = document.getElementById('appStatusOn');
 const appStatusOff = document.getElementById('appStatusOff');
 const inputFieldForReloadTime = document.getElementById('time');
+const formMultiplaySearchList = document.getElementById('search-list');
+const formMultiplaySearchButton = document.getElementById('form-multiplay-search__button');
 
 window.onload = function () {
 	chrome.storage.sync.get(['appStatus'], function(result) {
 		result.appStatus ? on() : off();
     });
-  //   chrome.storage.sync.get(['reloadTime'], function(result) {
-  //   	result.reloadTime 
-		// ? inputFieldForReloadTime.value = result.reloadTime 
-		// : inputFieldForReloadTime.value = 30;
-  //   });
 }
 
 bottonOnOff.onclick = function () {
@@ -49,11 +46,12 @@ function reloadDocument () {
 	chrome.runtime.sendMessage(sendObj);
 }
 
-// inputFieldForReloadTime.onkeyup = function () {
-// 	event.preventDefault();
-// 	console.log(event.which);
-// 	// const sendObj = {
-// 	// 	reloadTime: this.value
-// 	// }
-// 	// chrome.runtime.sendMessage(sendObj);
-// }
+formMultiplaySearchButton.onclick = function(event) {
+	event.preventDefault();
+	const searchQuery = 'https://www.rcscomponents.kiev.ua/modules.php?name=Asers_Shop&s_op=search&query=';
+	const arrayFromString = formMultiplaySearchList.value.split(/\n/);
+	console.log(arrayFromString);
+		arrayFromString.forEach(item => {
+			chrome.tabs.create({ url: `${searchQuery}${item}` });
+		});
+}

@@ -72,3 +72,13 @@
 .form-control-app__inputTime {
 	width: 53px;
 }
+.form-multiplay-search {
+	width: 100%;
+	padding: 5px;
+}
+.form-multiplay-search__list {
+	width: 100%;
+}
+.form-multiplay-search__button {
+	width: 100%;
+}

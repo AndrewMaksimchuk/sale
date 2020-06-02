@@ -7,16 +7,30 @@
 	<script src="js/popup.js" defer></script>
 </head>
 <body class="container">
+
 	<form class="form-control-app">
+
 			<label class="form-control-app__onOffApp" for="onOffApp">
 				<span id="appStatusOff">Off</span> \ <span class="glow" id="appStatusOn">On</span>
 				<input class="form-control-app__checkbox" type="checkbox" id="onOffApp">
 				<span class="form-control-app__slider"></span>
 			</label>
+
 			<!-- <label for="time" class="form-control-app__reloadTime">
 				<span>Час оновлення</span>
 				<input class="form-control-app__inputTime" type="number" id="time">
 			</label> -->
+
 	</form>
+
+	<form class="form-multiplay-search">
+
+		<label for="search-list">Список для пошуку</label>
+		<textarea class="form-multiplay-search__list" name="" id="search-list" rows="10"></textarea>
+		
+		<button class="form-multiplay-search__button" id="form-multiplay-search__button">Пошук</button>
+
+	</form>
+
 </body>
 </html>
