@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+
+  "name": "Sale!",
+  "description": "Ідентифікація нового замовлення та автоматичний вибір останнього. Відкриває нову сторінку із детальним оглядом.",
+  "version": "0.2.1",
+  
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png"
+  },
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "index.html",
+    "default_title": "Тицнюти сюди!"
+  },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "notifications"
+  ],
+
+    "content_scripts": [
+    {
+      "matches": ["https://www.rcscomponents.kiev.ua/admin.php?op=AserShopShowOrderList&daynum=1&myonly=1"],
+      "js": ["js/console.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["js/additional_features.js"]
+  }
+
+}
+

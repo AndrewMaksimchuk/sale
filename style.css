@@ -1,0 +1,74 @@
+/* Глобальні змінні */
+:root {
+    --main-bg-color: #252525;
+    --main-color: #ffffff;
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+.container {
+	width: 200px;
+	padding: 15px;
+	background-color: var(--main-bg-color); /* колір фона головної сторінки */
+    color: var(--main-color);
+}
+.form-control-app {
+	width: 100%;
+	padding: 15px;
+}
+.form-control-app__onOffApp {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+.form-control-app__checkbox {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.form-control-app__checkbox:checked + .form-control-app__slider {
+	background-color: #2196F3;
+}
+.form-control-app__checkbox:focus + .form-control-app__slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+.form-control-app__checkbox:checked + .form-control-app__slider:before {
+	transform: translateX(33px);
+}
+.form-control-app__slider {
+	width: 53px;
+	height: 18px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #cccccc;
+	transition: .4s;
+	border-radius: 34px;
+}
+.form-control-app__slider:before {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	left: 3px;
+	bottom: 2px;
+	background-color: #ffffff;
+	transition: .4s;
+	border-radius: 50%;
+}
+.glow-blue {
+	color: #2196F3; 
+}
+.glow-red {
+	color: red;
+}
+.form-control-app__reloadTime {
+	width: 100%;
+	padding-top: 15px;
+	display: inline-block;
+}
+.form-control-app__inputTime {
+	width: 53px;
+}
