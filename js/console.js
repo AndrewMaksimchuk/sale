@@ -1,6 +1,7 @@
-//https://www.rcscomponents.kiev.ua/admin.php?op=AserShopShowOrderList&daynum=5&myonly=1
-//з manifest файла, співпадіння по url де скрипт повинен працювати: "matches": ["*://*/*"]
-//"matches": ["https://www.rcscomponents.kiev.ua/admin.php?op=AserShopShowOrderList&daynum=5&myonly=1"]
+const orderTable = document.getElementsByClassName("order_list");
+if (orderTable.length) {
+	orderTable[0].style.width = "100%"
+}
 
 window.addEventListener("load", onOff);
 const timeToReload = 30 * 1000;
